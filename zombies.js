@@ -1,23 +1,16 @@
 console.log("starting");
 
-/**
- * Class => Item(name)
- * -----------------------------
- * Creates an item.
- *
- * @name Item
- * @param {string} name     The item's name.
- * @property {string} name
- */
-
-
 
   function Item(string){
     this.name = string;
   }
 
+function Weapon(name, damage){
+  this.damage = damage;
+  this.name = name;
+}
 
-
+Weapon.prototype = Object.create(Item.prototype);
 
 /**
  * Class => Weapon(name, damage)
@@ -40,8 +33,8 @@ console.log("starting");
  * Weapon Extends Item Class
  * -----------------------------
  */
-Item.prototype = Object.create(name);
-weapon.prototype = Object.create(Item.prototype);
+
+
 
 /**
  * Class => Food(name, energy)
