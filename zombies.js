@@ -133,8 +133,10 @@ class Player {
     }
   }
   checkPack(){
-    getPack(this._pack);
+    console.log(this.getPack());
+    return this.getPack();
   }
+
   discardItem(item){
 
     if(this._pack.indexOf(item)){
@@ -145,12 +147,9 @@ class Player {
     }else{
       return -1;
     }
-    
+
   }
 }
-
-
-
 
 /**
  * Player Class Method => checkPack()
