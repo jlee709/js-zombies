@@ -62,7 +62,6 @@ class Player {
     console.log(this._pack.indexOf(item));
     console.log(this._pack[this._pack.indexOf(item)]);
     if(this._pack.indexOf(item) !== -1){
-      console.log('FUCK');
       let idx = this._pack.indexOf(item);
 
       this._pack.splice(idx, 1);
