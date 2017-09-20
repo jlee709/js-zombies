@@ -147,67 +147,40 @@ class Player {
     }else{
       return -1;
     }
-
   }
-}
+  equip(itemToEquip){
+    let itemLocation = this._pack.indexOf(itemToEquip);
+    if(itemToEquip instanceof Weapon && itemLocation > -1 && !this.equipped){
+      this.equipped = itemToEquip;
+      this._pack.splice(itemLocation, 1);
 
-/**
- * Player Class Method => checkPack()
- * -----------------------------
- * Player checks the contents of their pack.
- *
- * Nicely format and print the items in the player's pack.
- * To access the pack, be sure to use Player's getPack method.
- * You should be able to invoke this function on a Player instance.
- *
- * @name checkPack
- */
+  } else if (this.equipped !== false) {
+      let newWeapon = this.equipped;
+      this.equipped = itemToEquip;
+      this._pack.splice(itemLocation, 1);
+      this._pack.push(newWeapon);
+    }
+  }
 
-
-
-
-
-
-
-/**
- * Player Class Method => equip(itemToEquip)
- * -----------------------------
- * Player equips a weapon item.
- *
- * Player can only equip Weapon instances.
- * Player can only equip weapon items from their pack.
- *
- * If the player already has a weapon equipped (the equipped property
- *   is set to an Item), find the itemToEquip in the pack and replace
- *   it with the currently equipped item.  Then set the equipped property
- *   to the itemToEquip.
- * However, if the player doesn't already have a weapon equipped, simply
- *   equip that item and remove it from the pack.
- * You should be able to invoke this function on a Player instance.
- *
- * @name equip
- * @param {Weapon} itemToEquip  The weapon item to equip.
- */
-
-
-/**
- * Player Class Method => eat(itemToEat)
- * -----------------------------
- * Player eats a food item, restoring their health.
- *
- * Player can only eat Food instances.
- * Player can only eat food items from their pack.
- *
- * Remove itemToEat from the pack.
- * Increase the player's health by the food's energy amount, but do not
- *   exceed the player's max health.  If exceeded, simply set player's health
- *   to max health instead.
- * To access the player's max health, be sure to use Player's getMaxHealth method.
- * You should be able to invoke this function on a Player instance.
- *
- * @name eat
- * @param {Food} itemToEat  The food item to eat.
- */
+ eat(itemToEat){
+   let itemLocation = this._pack.indexOf(itemToEat);
+   if(itemToEat instanceof Food && itemLocation > -1 && (this.health + itemToEat.energy) > this.getMaxHealth()){
+     this._pack.splice(itemLocation, 1);
+     this.health = this.getMaxHealth();
+   } else if (itemToEat instanceof Food && itemLocation > -1) {
+     this.health += itemToEat.energy;
+   } else {
+     console.log("No Food In Bag");
+   }
+ }
+  equippedWith(){
+    if (this.equipped){
+     return this.equipped.name;
+    } else {
+      return false;
+    }
+  }
+} //end player class
 
 
 /**
