@@ -1,8 +1,12 @@
+console.log("starting");
+
 /**
  * Class => Item(name)
  * -----------------------------
  * Creates an item.
  *
+
+
  * @name Item
  * @param {string} name     The item's name.
  * @property {string} name
