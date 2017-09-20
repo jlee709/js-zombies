@@ -67,7 +67,6 @@ class Weapon extends Item{
   constructor(name, energy){
     super(name);
     this.energy = energy;
-
   }
  }
 
@@ -102,6 +101,20 @@ class Weapon extends Item{
  * @property {method} getMaxHealth         Returns private variable `maxHealth`.
  */
 
+class Player {
+  constructor(name,health,strength,speed){
+    
+    this.name = name;
+    this.health = health;
+    this.strength = strength;
+    this.speed = speed;
+    this.pack = undefined;
+    this.maxHealth = health;
+    this.maxHealth = undefined;
+    this.isAlive = true;
+    this.equipped = false;
+  }
+}
 
 /**
  * Player Class Method => checkPack()
