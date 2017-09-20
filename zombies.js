@@ -124,20 +124,6 @@ class Player {
 }//end player class
 
 
-/**
- * Player Class Method => useItem(item)
- * -----------------------------
- * Player uses an item from the pack.
- *
- * If the item is a weapon, the player should equip the item.
- * If the item is food, the player should eat the item.
- * You should be able to invoke this function on a Player instance.
- *
- * @name useItem
- * @param {Item/Weapon/Food} item   The item to use.
- */
-
- 
 
 /**
  * Player Class Method => equippedWith()
@@ -193,27 +179,6 @@ class FastZombie extends Zombie {
  }
 }
 
-
-/**
- * Class => StrongZombie(health, strength, speed)
- * -----------------------------
- * Creates a strong zombie.
- *
- * The StrongZombie class constructor will call
- *   the super class (Zombie) constructor
- *   while passing in the 3 Zombie constructor params
- *
- * @name StrongZombie
- * @param {number} health           The zombie's health.
- * @param {number} strength         The zombie's strength.
- * @param {number} speed            The zombie's speed.
- */
-
-
-/**
- * StrongZombie Extends Zombie Class
- * -----------------------------
- */
 class StrongZombie extends Zombie {
  constructor(health, strength, speed) {
    super(health, strength, speed);
@@ -241,6 +206,12 @@ class StrongZombie extends Zombie {
  * RangedZombie Extends Zombie Class
  * -----------------------------
  */
+
+ class RangedZombie extends Zombie {
+ constructor(health, strength, speed) {
+   super(health, strength, speed);
+ }
+}
 
 
 
