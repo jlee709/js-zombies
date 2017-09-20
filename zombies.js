@@ -11,7 +11,7 @@
 
 class Item {
   constructor(string){
-    this.string = name;
+    this.name = string;
   }
 }
 
