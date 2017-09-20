@@ -114,13 +114,24 @@ class Player {
     this.isAlive = true;
     this.equipped = false;
   }
+  
   getPack(){
     return this._pack;
   }
+  
   getMaxHealth(){
     return this._maxHealth;
   }
-
+  
+  takeItem(item){
+    if(this._pack >= this._pack[2]){
+      console.log('pack is full ' + Player.name);
+      return false;
+    }else{
+      console.log(Player.name + 'stroring ' + item + 'was successful');
+      this._pack.push(item);
+    }
+  }
 }
 
 /**
@@ -144,6 +155,7 @@ class Player {
  *
  * Player's pack can only hold a maximum of 3 items, so if they try to add more
  *   than that to the pack, return false.
+
  * Before returning true or false, print a message containing the player's
  *   name and item's name if successful.  Otherwise, print a message saying
  *   that the pack is full so the item could not be stored.
