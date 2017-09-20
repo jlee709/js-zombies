@@ -12,27 +12,6 @@ function Weapon(name, damage){
 
 Weapon.prototype = Object.create(Item.prototype);
 
-/**
- * Class => Weapon(name, damage)
- * -----------------------------
- * Creates a weapon item.
- * Weapon items can be equipped for use in battle.
- *
- * The Weapon class constructor will call
- *   the super class (Item) constructor
- *   while passing in the 1 Item constructor param
- *
- * @name Weapon
- * @param {string} name     The weapon's name.
- * @param {number} damage   The weapon's damage.
- * @property {number} damage
- */
-
-
-/**
- * Weapon Extends Item Class
- * -----------------------------
- */
 
 
 
@@ -51,14 +30,18 @@ Weapon.prototype = Object.create(Item.prototype);
  * @param {number} energy     The energy the food provides.
  * @property {number} energy
  */
-
+function Food(name, energy, energyNum){
+  this.name = name;
+  this.energy = energy;
+  this.energyNum = energyNum;
+}
 
 /**
  * Food Extends Item Class
  * -----------------------------
  */
 
-
+Food.prototype = Object.create(Item.prototype)
 
 /**
  * Class => Player(name, health, strength, speed)
