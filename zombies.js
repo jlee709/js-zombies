@@ -186,34 +186,17 @@ class StrongZombie extends Zombie {
 }
 
 
-/**
- * Class => RangedZombie(health, strength, speed)
- * -----------------------------
- * Creates a ranged zombie.
- *
- * The RangedZombie class constructor will call
- *   the super class (Zombie) constructor
- *   while passing in the 3 Zombie constructor params
- *
- * @name RangedZombie
- * @param {number} health           The zombie's health.
- * @param {number} strength         The zombie's strength.
- * @param {number} speed            The zombie's speed.
- */
-
-
-/**
- * RangedZombie Extends Zombie Class
- * -----------------------------
- */
-
  class RangedZombie extends Zombie {
  constructor(health, strength, speed) {
    super(health, strength, speed);
  }
 }
 
-
+class ExplodingZombie extends Zombie {
+ constructor(health, strength, speed) {
+   super(health, strength, speed);
+ }
+}
 
 /**
  * Class => ExplodingZombie(health, strength, speed)
