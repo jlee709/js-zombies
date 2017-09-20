@@ -9,6 +9,12 @@
  */
 
 
+class Item {
+  constructor(string){
+    this.string = name;
+  }
+}
+
 /**
  * Class => Weapon(name, damage)
  * -----------------------------
