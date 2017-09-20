@@ -108,12 +108,16 @@ class Player {
     this.health = health;
     this.strength = strength;
     this.speed = speed;
-    this.pack = undefined;
+    this._pack = [];
     this.maxHealth = health;
     this.maxHealth = undefined;
     this.isAlive = true;
     this.equipped = false;
   }
+  getPack(){
+    return this._pack;
+  }
+
 }
 
 /**
@@ -127,6 +131,7 @@ class Player {
  *
  * @name checkPack
  */
+
 
 
 /**
