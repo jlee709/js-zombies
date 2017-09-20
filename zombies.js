@@ -5,12 +5,18 @@ console.log("starting");
  * -----------------------------
  * Creates an item.
  *
-
-
  * @name Item
  * @param {string} name     The item's name.
  * @property {string} name
  */
+
+
+
+  function Item(string){
+    this.name = string;
+  }
+
+
 
 
 /**
@@ -34,8 +40,8 @@ console.log("starting");
  * Weapon Extends Item Class
  * -----------------------------
  */
-
-
+Item.prototype = Object.create(name);
+weapon.prototype = Object.create(Item.prototype);
 
 /**
  * Class => Food(name, energy)
