@@ -45,7 +45,7 @@ class Player {
   }
   
   takeItem(item){
-    if(this._pack >= this._pack[2]){
+    if(this._pack.length > 2){
       console.log('pack is full ' + Player.name);
       return false;
     }else{
@@ -59,14 +59,17 @@ class Player {
   }
 
   discardItem(item){
-
-    if(this._pack.indexOf(item)){
+    console.log(this._pack.indexOf(item));
+    console.log(this._pack[this._pack.indexOf(item)]);
+    if(this._pack.indexOf(item) !== -1){
+      console.log('FUCK');
       let idx = this._pack.indexOf(item);
+
       this._pack.splice(idx, 1);
       console.log(Player.name + ' the' + this.item + 'was scrapped');
       return true;
-    }else{
-      return -1;
+    }else{ 
+      return false;
     }
   }
   equip(itemToEquip){
@@ -98,18 +101,23 @@ class Player {
 
   useItem(item) {
   if (item instanceof Weapon) {
+    console.log(item);
     this.equip(item);
   } else if (item instanceof Food) {
     this.eat(item);
-    console.log(this.eat); }
+    console.log(this.equipped); 
+  }
 }
-  equippedWith(item){
-   if (this.equipped){
-     console.log('No weapon equipped');
-     returnthis.equipped.name;
-    }else{
-     return false;
-   }
+ 
+
+  equippedWith(){
+    if (this.equipped){
+      console.log('LOOK HERE',this.equipped);
+      return this.equipped.name;
+    } else{
+      console.log('LOOK HERE 2',this.equipped);
+      return false;
+    }
   }
 
 
