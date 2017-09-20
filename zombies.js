@@ -13,35 +13,29 @@ function Weapon(name, damage){
 Weapon.prototype = Object.create(Item.prototype);
 
 
-
-
-/**
- * Class => Food(name, energy)
- * -----------------------------
- * Creates a food item.
- * Food items give energy, restoring health to the player.
- *
- * The Food class constructor will call
- *   the super class (Item) constructor
- *   while passing in the 1 Item constructor param
- *
- * @name Food
- * @param {string} name       The food's name.
- * @param {number} energy     The energy the food provides.
- * @property {number} energy
- */
 function Food(name, energy, energyNum){
   this.name = name;
   this.energy = energy;
   this.energyNum = energyNum;
 }
 
-/**
- * Food Extends Item Class
- * -----------------------------
- */
+Food.prototype = Object.create(Item.prototype);
 
-Food.prototype = Object.create(Item.prototype)
+
+
+
+// big class
+function Player(name,health,strength,speed){
+  this.name = name;
+    this.health = health;
+    this.strength = strength;
+    this.speed = speed;
+    this.pack = undefined;
+    this.maxHealth = health;
+    this.maxHealth = undefined;
+    this.isAlive = true;
+    this.equipped = false;
+}
 
 /**
  * Class => Player(name, health, strength, speed)
