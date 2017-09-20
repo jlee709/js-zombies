@@ -90,6 +90,7 @@ class Player {
      this.health = this.getMaxHealth();
    } else if (itemToEat instanceof Food && itemLocation > -1) {
      this.health += itemToEat.energy;
+     this._pack.splice(itemLocation, 1);
    } else {
      console.log("No Food In Bag");
    }
@@ -103,12 +104,11 @@ class Player {
     console.log(this.eat); }
 }
   equippedWith(item){
-   if (!this.equipped){
+   if (this.equipped){
      console.log('No weapon equipped');
-     return false;
+     returnthis.equipped.name;
     }else{
-     console.log(this.name + ' has ' + this.equipped + ' equipped.');
-     return this.equipped.name;
+     return false;
    }
   }
 
@@ -145,14 +145,6 @@ class Player {
  * @return {string/boolean}   Weapon name or false if nothing is equipped.
  */
 
-
- // equippedWith(){
-  //   if (this.equipped){
-  //    return this.equipped.name;
-  //   } else {
-  //     return false;
-  //   }
-  // }
 
 class Zombie {
  constructor(health, strength, speed) {
@@ -214,7 +206,11 @@ class FastZombie extends Zombie {
  * StrongZombie Extends Zombie Class
  * -----------------------------
  */
-
+class StrongZombie extends Zombie {
+ constructor(health, strength, speed) {
+   super(health, strength, speed);
+ }
+}
 
 
 /**
