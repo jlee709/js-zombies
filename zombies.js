@@ -1,11 +1,13 @@
 console.log("starting");
 
 
-  function Item(string){
-    this.name = string;
-  }
+function Item(name){
+  this.name = name;
+}
 
 function Weapon(name, damage){
+
+  Item.call(this, name); // call parent constructor
   this.damage = damage;
   this.name = name;
 }
@@ -14,14 +16,13 @@ Weapon.prototype = Object.create(Item.prototype);
 
 
 function Food(name, energy, energyNum){
+  Item.call(this, name);
   this.name = name;
   this.energy = energy;
   this.energyNum = energyNum;
 }
 
 Food.prototype = Object.create(Item.prototype);
-
-
 
 
 // player class
@@ -41,11 +42,6 @@ function Player(name,health,strength,speed){
   
   Player.prototype.getPack = function(){
     return this._pack;
-  };
-
-  Player.prototype.checkPack = function(){
-    console.log(this.getPack());
-    return this.getPack();
   };
 
 
