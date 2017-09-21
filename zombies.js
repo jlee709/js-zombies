@@ -60,16 +60,18 @@ function Player(name,health,strength,speed){
   };  
 
 
-
-
+Player.prototype.discardItem = function(item){
+    if(this._pack.indexOf(item) !== -1){
+      let idx = this._pack.indexOf(item); //sets item value to idx in arry[pack]
+        this._pack.splice(idx,1);
+        console.log(Player.name + 'the ' + item + 'has been discarded');
+        return true;
+    }
+};
 /**
  * Player Class Method => discardItem(item)
  * -----------------------------
- * Player discards an item from their pack.
- *
- * Use Array's indexOf method to check if the pack contains the item.
- * If an item is not found in the pack, indexOf returns -1.
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+ 
  *
  * If the item is in the pack, remove it from the pack using Array's splice method.
  * Print the player and item names and a message saying the item was discarded.
@@ -87,7 +89,11 @@ function Player(name,health,strength,speed){
  * @param {Item/Weapon/Food} item   The item to discard.
  * @return {boolean} true/false     Whether player was able to remove item from pack.
  */
-
+// * Player discards an item from their pack.
+//  *
+//  * Use Array's indexOf method to check if the pack contains the item.
+//  * If an item is not found in the pack, indexOf returns -1.
+//  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
 
 /**
  * Player Class Method => equip(itemToEquip)
