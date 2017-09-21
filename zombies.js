@@ -39,9 +39,12 @@ function Player(name,health,strength,speed){
 
   }
 
-  
   Player.prototype.getPack = function(){
     return this._pack;
+  };
+
+  Player.prototype.getMaxHealth = function(){
+    return this._maxHealth;
   };
 
 
