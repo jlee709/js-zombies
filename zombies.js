@@ -130,49 +130,15 @@ function Zombie(health, strength, speed){
 function FastZombie(health, strength, speed){
   Zombie.call(this,health,strength,speed);
 }
-/**
- * Class => FastZombie(health, strength, speed)
- * -----------------------------
- * Creates a fast zombie.
- *
- * The FastZombie class constructor will call
- *   the super class (Zombie) constructor
- *   while passing in the 3 Zombie constructor params
- *
- * @name FastZombie
- * @param {number} health           The zombie's health.
- * @param {number} strength         The zombie's strength.
- * @param {number} speed            The zombie's speed.
- */
 
-
-/**
- * FastZombie Extends Zombie Class
- * -----------------------------
- */
 FastZombie.prototype = Object.create(Zombie.prototype);
 
 
-/**
- * Class => StrongZombie(health, strength, speed)
- * -----------------------------
- * Creates a strong zombie.
- *
- * The StrongZombie class constructor will call
- *   the super class (Zombie) constructor
- *   while passing in the 3 Zombie constructor params
- *
- * @name StrongZombie
- * @param {number} health           The zombie's health.
- * @param {number} strength         The zombie's strength.
- * @param {number} speed            The zombie's speed.
- */
+function StrongZombie(health, strength, speed){
+  Zombie.call(this,health,strength,speed);
+}
 
-
-/**
- * StrongZombie Extends Zombie Class
- * -----------------------------
- */
+StrongZombie.prototype = Object.create(Zombie.prototype);
 
 
 
