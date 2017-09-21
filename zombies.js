@@ -68,32 +68,12 @@ Player.prototype.discardItem = function(item){
         return true;
     }
 };
-/**
- * Player Class Method => discardItem(item)
- * -----------------------------
- 
- *
- * If the item is in the pack, remove it from the pack using Array's splice method.
- * Print the player and item names and a message saying the item was discarded.
- * Return true for the successful discard.
- * Note: The splice method can also be used for array element replacement.
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
- *
- * If the item is not in the pack, return a message with the item name saying
- *   nothing was discarded since the item could not be found.
- * Return false in this case.
- *
- * You should be able to invoke this function on a Player instance.
- *
- * @name discardItem
- * @param {Item/Weapon/Food} item   The item to discard.
- * @return {boolean} true/false     Whether player was able to remove item from pack.
- */
-// * Player discards an item from their pack.
-//  *
-//  * Use Array's indexOf method to check if the pack contains the item.
-//  * If an item is not found in the pack, indexOf returns -1.
-//  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+
+Player.prototype.checkPack = function(){
+  console.log(this.getPack());
+  return this.getPack();
+};
+
 
 /**
  * Player Class Method => equip(itemToEquip)
