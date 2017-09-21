@@ -102,38 +102,22 @@ Player.prototype.equip = function(itemToEquip){
    }
  };
 
-/**
- * Player Class Method => eat(itemToEat)
- * -----------------------------
- * Player eats a food item, restoring their health.
- *
- * Player can only eat Food instances.
- * Player can only eat food items from their pack.
- *
- * Remove itemToEat from the pack.
- * Increase the player's health by the food's energy amount, but do not
- *   exceed the player's max health.  If exceeded, simply set player's health
- *   to max health instead.
- * To access the player's max health, be sure to use Player's getMaxHealth method.
- * You should be able to invoke this function on a Player instance.
- *
- * @name eat
- * @param {Food} itemToEat  The food item to eat.
- */
+Player.prototype.useItem = function(item){
+  if(item instanceof Weapon){
+    this.equip(item);
+  } else if (item instanceof Food){
+    this.eat(item);
+  }
+};
 
 
-/**
- * Player Class Method => useItem(item)
- * -----------------------------
- * Player uses an item from the pack.
- *
- * If the item is a weapon, the player should equip the item.
- * If the item is food, the player should eat the item.
- * You should be able to invoke this function on a Player instance.
- *
- * @name useItem
- * @param {Item/Weapon/Food} item   The item to use.
- */
+ // * If the item is a weapon, the player should equip the item.
+ // * If the item is food, the player should eat the item.
+ // * You should be able to invoke this function on a Player instance.
+ // *
+ // * @name useItem
+ // * @param {Item/Weapon/Food} item   The item to use.
+ // */
 
 
 /**
