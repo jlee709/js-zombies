@@ -24,40 +24,31 @@ Food.prototype = Object.create(Item.prototype);
 
 
 
-// big class
+// player class
 function Player(name,health,strength,speed){
-  this.name = name;
+    this.name = name;
     this.health = health;
     this.strength = strength;
     this.speed = speed;
-    this.pack = undefined;
-    this.maxHealth = health;
+    this._pack = [];
+    this._maxHealth = health;
     this.maxHealth = undefined;
     this.isAlive = true;
     this.equipped = false;
-}
 
-/**
- * Class => Player(name, health, strength, speed)
- * -----------------------------
- * Creates a player in a zombie-infested world.
- *
- * @name Player
- * @param {string} name                    The player's name.
- * @param {number} health                  The player's health.
- * @param {number} strength                The player's strength.
- * @param {number} speed                   The player's speed.
- * @private {array} pack                   Default value should be empty.
- * @private {number} maxHealth             Default value should be set to `health`.
- * @property {string} name
- * @property {number} health
- * @property {number} strength
- * @property {number} speed
- * @property {boolean} isAlive             Default value should be `true`.
- * @property {Weapon/boolean} equipped     Default value should be `false`.
- * @property {method} getPack              Returns private variable `pack`.
- * @property {method} getMaxHealth         Returns private variable `maxHealth`.
- */
+  }
+
+  
+  Player.prototype.getPack = function(){
+    return this._pack;
+  };
+
+  Player.prototype.checkPack = function(){
+    console.log(this.getPack());
+    return this.getPack();
+  };
+
+
 
 
 /**
